@@ -6,11 +6,11 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 11:32:27 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 12:03:57 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/04 17:27:18 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

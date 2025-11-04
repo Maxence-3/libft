@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 15:46:00 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 17:24:41 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/04 14:26:53 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/04 18:16:05 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <bsd/string.h>
 
-int	ft_isdigit(int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (!(c > 47 && c < 58))
-		return (0);
-	else
-		return (1);
-}
+	size_t	i;
 
+	i = 0;
+	while (i < size - 1 && src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	if (i > 0)
+		dst[i] = '\0';
+	return (i);
+}
 /* int main(void)
 {
-	printf("%d", ft_isdigit('0'));
-	printf("%c", '\n');
-	printf("%d", ft_isdigit('a'));
-	printf("%c", '\n');
-	printf("%d", ft_isdigit('A'));
+	char dst[18] = "Coucou ";
+	const char *src = "les amis !";
+	char dst_2[18] = "Coucou ";
+	const char *src_2 = "les amis !";
+	ft_strlcpy(dst, src, 18);
+	strlcpy(dst_2, src_2, 18);
+	printf("%s\n", dst);
+	printf("%s", dst_2);
 } */

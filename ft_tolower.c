@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 15:30:46 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 17:24:22 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/04 16:00:22 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/04 16:01:43 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_tolower(int c)
 {
-	if (!((c > 64 && c < 91) || (c > 96 && c < 123)))
-		return (0);
-	else
-		return (1);
+	if (c > 64 && c < 91)
+		c += 32;
+	return (c);
 }
 
-/* #include <stdio.h>
-
-int main(void)
+/* int main(void)
 {
-	printf("%d", ft_isalpha('q'));
+	printf("%d", ft_tolower('C'));
 } */

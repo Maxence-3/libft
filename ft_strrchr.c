@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 15:30:46 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 17:24:22 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/04 18:18:42 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/04 18:30:22 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char *ft_strrchr(const char *s, int c)
 {
-	if (!((c > 64 && c < 91) || (c > 96 && c < 123)))
-		return (0);
-	else
-		return (1);
-}
+	int i;
 
-/* #include <stdio.h>
+	i = ft_strlen(s);
+	while (s[i] != c)
+	{
+		if (i-- == 0)
+			return (NULL);
+	}
+	return ((char *) &s[i]);
+}
 
 int main(void)
 {
-	printf("%d", ft_isalpha('q'));
-} */
+	char *test = "coucou";
+	printf("%s\n", ft_strrchr(test, 'c'));
+	printf("%s", strrchr(test, 'c'));
+}

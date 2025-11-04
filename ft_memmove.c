@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 11:53:56 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 17:27:42 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/04 12:23:21 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/04 17:28:08 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char		*d;
 	const char	*s;
+	char *temp[];
 
 	d = dest;
 	s = src;
 	while (n--)
-		d[n] = s[n];
+		temp[n] = s[n];
+	while (temp[n])
+		d[n] = temp[n];
 	return (dest);
 }
-
 /* #include <stdio.h>
 int main(void)
 {
@@ -31,21 +33,21 @@ int main(void)
 	char str2[] = "macron demission";
 	int test3 = 4;
 	int test4 = 18;
-	printf("avant lib memcpy str : %s\n", str);
-	printf("avant lib memcpy int : %d\n", test3);
-	printf("avant ft memcpy str : %s\n", str);
-	printf("avant ft memcpy int : %d\n", test3);
+	printf("avant lib memmove str : %s\n", str);
+	printf("avant lib memmove int : %d\n", test3);
+	printf("avant ft memmove str : %s\n", str);
+	printf("avant ft memmove int : %d\n", test3);
 
-	memcpy(str + 7, str2 + 7, 9);
-	ft_memcpy(str + 7, str2 + 7, 9);
+	memmove(str + 7, str2 + 7, 9);
+	ft_memmove(str + 7, str2 + 7, 9);
 
-	memcpy(&test3, &test4, 4);
-	ft_memcpy(&test3, &test4, 4);
+	memmove(&test3, &test4, 4);
+	ft_memmove(&test3, &test4, 4);
 
-	printf("apres lib memcpy str : %s\n", str);
-	printf("apres lib memcpy int : %d\n", test3);
-	printf("apres ft memcpy str : %s\n", str);
-	printf("apres ft memcpy int : %d\n", test3);
+	printf("apres lib memmove str : %s\n", str);
+	printf("apres lib memmove int : %d\n", test3);
+	printf("apres ft memmove str : %s\n", str);
+	printf("apres ft memmove int : %d\n", test3);
 
 	return (0);
 } */

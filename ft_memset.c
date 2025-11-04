@@ -6,11 +6,11 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 10:23:52 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 12:03:37 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/04 17:26:40 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
