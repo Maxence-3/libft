@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:30:46 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 18:14:54 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/06 11:11:35 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	int		j;
+	size_t	j;
+	size_t	total;
 
 	i = ft_strlen(dst);
 	j = 0;
-	while (src[j])
+	total = size - ft_strlen(dst) - 1;
+	while (src[j] && j < total)
 		dst[i++] = src[j++];
 	dst[i] = '\0';
 	return (i);

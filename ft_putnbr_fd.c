@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 14:26:53 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 10:52:58 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/05 17:57:23 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/06 10:29:52 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	int		i;
+	long	num;
+	char	c;
 
+	num = n;
 	i = 0;
-	while (i < size - 1 && src[i])
+	if (num < 0)
 	{
-		dst[i] = src[i];
-		i++;
+		write(fd, "-", 1);
+		num = -num;
 	}
-	if (i > 0)
-		dst[i] = '\0';
-	return (i);
+	if (num > 9)
+	{
+		ft_putnbr_fd(num / 10, fd);
+	}
+	c = (num % 10) + '0';
+	write(fd, &c, 1);
 }
+
 /* int main(void)
 {
-	char dst[18] = "Coucou ";
-	const char *src = "les amis !";
-	char dst_2[18] = "Coucou ";
-	const char *src_2 = "les amis !";
-	ft_strlcpy(dst, src, 18);
-	strlcpy(dst_2, src_2, 18);
-	printf("%s\n", dst);
-	printf("%s", dst_2);
+	int fd = open("test.txt", O_WRONLY | O_TRUNC | O_CREAT, 0640);
+	ft_putnbr_fd(1312, fd);
+	close(fd);
 } */

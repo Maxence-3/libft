@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 14:26:53 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 10:52:58 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/05 12:13:41 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/05 13:51:32 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	char	*result;
+	int		i;
+	int		j;
 
+	result = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
 	i = 0;
-	while (i < size - 1 && src[i])
+	j = 0;
+	while (s1[i])
 	{
-		dst[i] = src[i];
+		result[j] = s1[i];
 		i++;
+		j++;
 	}
-	if (i > 0)
-		dst[i] = '\0';
-	return (i);
+	i = 0;
+	while (s2[i])
+	{
+		result[j] = s2[i];
+		i++;
+		j++;
+	}
+	result[j] = '\0';
+	return (result);
 }
+
 /* int main(void)
 {
-	char dst[18] = "Coucou ";
-	const char *src = "les amis !";
-	char dst_2[18] = "Coucou ";
-	const char *src_2 = "les amis !";
-	ft_strlcpy(dst, src, 18);
-	strlcpy(dst_2, src_2, 18);
-	printf("%s\n", dst);
-	printf("%s", dst_2);
+	char *s1 = "test ";
+	char *s2 = "de ouf";
+	char *result = ft_strjoin(s1, s2);
+	printf("%s", result);
+	free(result);
 } */

@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 10:23:52 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 17:26:40 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/06 10:27:59 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,17 @@ void	*ft_memset(void *s, int c, size_t n)
 		str[n] = c;
 	return (s);
 }
-/* #include <stdio.h>
-int main(void)
+
+/* int main(void)
 { 
-	int array[5] = {1, 2, 3, 4, 5};
-	size_t size = sizeof(int) * 5;
-	ft_memset(array, 'a', size);
+	char str[] = "test";
+	int nb[5] = {1, 2, 3, 4, 5};
+	size_t size = sizeof(char) * 4;
+	size_t size_nb = sizeof(int) * 5;
+	ft_memset(str, 'o', size);
+	ft_memset(nb, 0, size_nb);
+	printf("%s\n", str);
 	int i = 0;
-	while (array[i++])
-		printf("%d", array[i]);
+	while (nb[i++])
+		printf("%d\n", nb[i]);
 } */

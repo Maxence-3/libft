@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 14:26:53 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 10:52:58 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/05 10:05:04 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/06 10:30:26 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <bsd/string.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (i < size - 1 && src[i])
+	j = 0;
+	if (ft_strlen(little) == 0)
+		return (big);
+	while (big[i])
 	{
-		dst[i] = src[i];
+		while (big[i + j] == little[j])
+		{
+			j++;
+			if (!little[j])
+				return (big[i]);
+		}
+		j = 0;
 		i++;
 	}
-	if (i > 0)
-		dst[i] = '\0';
-	return (i);
+	return (NULL);
 }
-/* int main(void)
+
+int main(void)
 {
-	char dst[18] = "Coucou ";
-	const char *src = "les amis !";
-	char dst_2[18] = "Coucou ";
-	const char *src_2 = "les amis !";
-	ft_strlcpy(dst, src, 18);
-	strlcpy(dst_2, src_2, 18);
-	printf("%s\n", dst);
-	printf("%s", dst_2);
-} */
+	
+}

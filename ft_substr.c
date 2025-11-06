@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 14:26:53 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 10:52:58 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/05 11:25:48 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/05 13:53:11 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char	*result;
+	int		i;
 
+	result = malloc(sizeof(char) * (len - start));
+	if (!result)
+		return (NULL);
 	i = 0;
-	while (i < size - 1 && src[i])
+	if (!result)
+		return (NULL);
+	while (s[start + i])
 	{
-		dst[i] = src[i];
+		result[i] = s[start + i];
 		i++;
 	}
-	if (i > 0)
-		dst[i] = '\0';
-	return (i);
+	return (result);
 }
+
 /* int main(void)
 {
-	char dst[18] = "Coucou ";
-	const char *src = "les amis !";
-	char dst_2[18] = "Coucou ";
-	const char *src_2 = "les amis !";
-	ft_strlcpy(dst, src, 18);
-	strlcpy(dst_2, src_2, 18);
-	printf("%s\n", dst);
-	printf("%s", dst_2);
+	char *s = "test de ouf";
+	char *result = ft_substr(s, 5, ft_strlen(s));
+	printf("%s", result);
+	free(result);
 } */

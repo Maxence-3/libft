@@ -6,15 +6,15 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:18:42 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 18:30:22 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/05 09:37:42 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen(s);
 	while (s[i] != c)
@@ -25,9 +25,9 @@ char *ft_strrchr(const char *s, int c)
 	return ((char *) &s[i]);
 }
 
-int main(void)
+/* int main(void)
 {
 	char *test = "coucou";
 	printf("%s\n", ft_strrchr(test, 'c'));
 	printf("%s", strrchr(test, 'c'));
-}
+} */
