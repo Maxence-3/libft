@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 11:32:27 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 17:27:18 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/06 15:22:58 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,20 @@ void	ft_bzero(void *s, size_t n)
 		str[n] = '\0';
 }
 
-/* #include <stdio.h>
-int main(void)
+/* int main()
 {
-	int array[5] = {1, 2, 3, 4, 5};
-	size_t size = sizeof(int) * 5;
-	ft_bzero(array, size);
-	int i = 0;
-	while (array[i++])
-		printf("%d", array[i]);
+    char str[] = "macron demission";
+    char str2[] = "macron demission";
+    printf("Avant lib bzero : %s\n", str);
+    printf("Avant ft bzero : %s\n", str2);
+
+    bzero(str + 7, 1);
+    ft_bzero(str2 + 7, 1);
+
+    printf("Apres lib bzero : %s\n", str);
+    printf("Apres ft bzero : %s\n", str2);
+
+    printf("ce quil y a apres null lib bzero : %c\n", str[7]);
+    printf("ce quil y a apres null ft bzero : %c\n", str2[7]);
+    return 0;
 } */

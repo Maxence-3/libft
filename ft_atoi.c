@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 10:50:05 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 11:55:48 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/06 14:30:47 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-int main(void)
+/* int main(void)
 {
 	printf("Perso: %d\n", ft_atoi("  -355qwfcsdv"));
 	printf("Lib: %d\n", atoi("  -355qwfcsdv"));
@@ -48,4 +48,4 @@ int main(void)
 	printf("Lib: %d\n", atoi("-999999999999"));
 	printf("Perso: %d\n", ft_atoi(" -0012gfg4"));
 	printf("Lib: %d\n", atoi(" -0012gfg4"));
-}
+} */

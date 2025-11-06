@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:02:16 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 10:30:09 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/06 15:03:06 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	i = 0;
 	total = nmemb * size;
-	if (nmemb == 0 || size == 0)
+	if (nmemb == 0 || size == 0 || total > 2147483647)
 		return (NULL);
 	ptr = malloc(total);
 	while (i++ < total)
