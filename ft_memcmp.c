@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 09:56:16 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/08 15:46:19 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/08 19:35:55 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);
+		i++;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 12:13:41 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/05 13:51:32 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/08 18:51:41 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	result = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	result = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	i = 0;
 	j = 0;
 	while (s1[i])

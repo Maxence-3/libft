@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:05:04 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/05 11:22:05 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/08 18:34:26 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 
 	i = 0;
-	dup = malloc(sizeof(char) * ft_strlen(s));
+	dup = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!dup)
 		return (NULL);
 	while (s[i])

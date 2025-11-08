@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:26:53 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 10:52:58 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/08 19:38:15 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[i] = src[i];
 		i++;
 	}
-	if (i > 0)
+	if (i >= 0)
 		dst[i] = '\0';
 	return (i);
 }

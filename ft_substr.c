@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:25:48 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/05 13:53:11 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/08 18:47:40 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,23 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*result;
-	int		i;
+	size_t	i;
 
-	result = malloc(sizeof(char) * (len - start));
-	if (!result)
-		return (NULL);
 	i = 0;
+	result = malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
-	while (s[start + i])
+	if (ft_strlen(s) == 0 && start == 1)
+	{
+		result[0] = '\0';
+		return (result);
+	}
+	while (i < len && s[start + i])
 	{
 		result[i] = s[start + i];
 		i++;
 	}
+	result[i] = '\0';
 	return (result);
 }
 

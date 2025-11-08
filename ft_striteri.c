@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:18:21 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/08 14:53:17 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/08 18:37:04 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i] != 0)
 	{
-		f(i, s);
+		f(i, &s[i]);
 		i++;
 	}
 }
