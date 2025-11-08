@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:23:21 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 14:28:26 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/08 15:46:50 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		d[n] = temp[n];
 	return (dest);
 }
-/* #include <stdio.h>
-int main(void)
+
+/* int main(void)
 {
     char str[] = "macron traitrise";
     char str2[] = "macron demission";

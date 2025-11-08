@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 09:56:16 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/08 15:46:19 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/08 14:18:21 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/08 14:53:17 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+/* void majuscule(unsigned int i, char *s)
 {
-	char	*str1;
-	char	*str2;
-	size_t	i;
+	s[i] = s[i] - 32;
+} */
 
-	str1 = (char *) s1;
-	str2 = (char *) s2;
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	int	i;
+
 	i = 0;
-	while (str1[i] && str2[i] && i < n)
+	while (s[i] != 0)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		f(i, s);
+		i++;
 	}
-	return (0);
 }
 
-/* int	main(void)
+/* int main(void)
 {
-	char *s1 = "test";
-	char *s2 = "Test";
-	size_t n = 4;
-	printf("Perso: %d\n", ft_memcmp(s1, s2, n));
-	printf("Lib: %d\n", memcmp(s1, s2, n));
+	char str[10] = "test";
+	ft_striteri(str, majuscule);
+	printf("%s", str);
 } */

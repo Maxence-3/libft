@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 09:38:46 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/08 15:43:07 by mde-carv         ###   ########.fr       */
+/*   Created: 2025/11/08 11:44:12 by mde-carv          #+#    #+#             */
+/*   Updated: 2025/11/08 14:37:31 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+/* char majuscule(unsigned int n, char c)
 {
-	char	*str;
-	size_t	i;
+	(void) n;
+	return (c - 32);
+} */
 
-	str = (char *) s;
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int		i;
+	char	*result;
+
+	result = malloc(sizeof(char) * (ft_strlen(s)) + 1);
+	if (!result)
+		return (NULL);
 	i = 0;
-	while (str[i] && i < n)
+	while (s[i])
 	{
-		if (str[i] == c)
-			return (&str[i]);
+		result[i] = f(i, s[i]);
 		i++;
 	}
-	return (NULL);
+	result[i] = '\0';
+	return (result);
 }
 
 /* int main(void)
 {
-	char *s = "test";
-	int c = 'e';
-	printf("Perso: %s\n", (char *) ft_memchr(s, c, 4));
-	printf("Lib: %s\n", (char *) ft_memchr(s, c, 4));
+	char *str = "test";
+	char *result = ft_strmapi(str, majuscule);
+	printf("%s", result);
+	free (result);
 } */
