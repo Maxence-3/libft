@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:23:21 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/08 15:46:50 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:38:52 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,27 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
-	char		temp[1024];
+	char	*d;
+	char	*s;
+	size_t	i;
 
-	d = dest;
-	s = src;
-	while (n--)
-		temp[n] = s[n];
-	while (temp[n])
-		d[n] = temp[n];
-	return (dest);
+	d = (char *) dest;
+	s = (char *) src;
+	i = 0;
+	if (d == s)
+		return (dest);
+	if (d < s)
+	{
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	if (d > s)
+		while (n--)
+			d[n] = s[n];
+	return (d);
 }
 
 /* int main(void)

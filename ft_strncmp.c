@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 09:21:07 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/08 18:56:48 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:19:41 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
 	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
+	str1 = (unsigned char *) s1;
+	str2 = (unsigned char *) s2;
+	while ((str1[i] || str2[i]) && i < n)
 	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
 	return (0);

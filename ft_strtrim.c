@@ -6,13 +6,13 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:00:37 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 16:37:15 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:32:53 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_is_in_charset(char c, char *set)
+int	is_charset(char c, char const *set)
 {
 	int	i;
 
@@ -26,55 +26,40 @@ int	ft_is_in_charset(char c, char *set)
 	return (0);
 }
 
-int	ft_count_char(char *s1, char *set)
-{
-	int	i;
-	int	len;
-
-	i = 0;
-	len = 0;
-	while (s1[i])
-	{
-		if (ft_is_in_charset(s1[i], set))
-			len++;
-		i++;
-	}
-	return (len);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trimed;
-	char	*str;
-	char	*charset;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	start;
+	size_t	end;
+	char	*res;
 
-	str = (char *) s1;
-	charset = (char *) set;
 	i = 0;
-	j = 0;
-	trimed = malloc(sizeof(char)
-			* (ft_strlen(str) - ft_count_char(str, charset)));
-	if (!trimed)
+	start = 0;
+	end = ft_strlen(s1);
+	if (!s1 || !set)
 		return (NULL);
-	while (str[i])
+	while (s1[start] && is_charset(s1[start], set))
+		start++;
+	while (s1[end - 1] && is_charset(s1[end - 1], set))
+		end--;
+	res = malloc(sizeof(char) * (end - start + 1));
+	if (!res)
+		return (NULL);
+	while (i < end - start)
 	{
-		if (!ft_is_in_charset(str[i], charset))
-		{
-			trimed[j] = str[i];
-			j++;
-		}
+		res[i] = s1[start + i];
 		i++;
 	}
-	return (trimed);
+	res[i] = '\0';
+	return (res);
 }
 
-/* int main(void)
+/* int main()
 {
-	char *s1 = "test-de=ouf+!";
-	char *set = "-=+";
-	char *result = ft_strtrim(s1, set);
-	printf("%s", result);
-	free(result);
+    char *str = "++++***---tes++t----++++***";
+    char *res = ft_strtrim(str, "-+*");
+    printf("%s\n", res);
+    free(res);
+    
+    return 0;
 } */

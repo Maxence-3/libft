@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 11:07:43 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/08 14:16:00 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/10 09:13:01 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,14 @@ int	count_word(char *s, char c)
 	words = 0;
 	while (s[i])
 	{
-		while (sep(s[i], c) && s[i])
+		while (s[i] && sep(s[i], c))
 			i++;
-		words++;
-		while (!sep(s[i], c) && s[i])
-			i++;
+		if (s[i])
+		{
+			words++;
+			while (s[i] && !sep(s[i], c))
+				i++;
+		}
 	}
 	return (words);
 }
@@ -43,7 +46,7 @@ char	*ft_strduplicate(char *s, int start, int end)
 	int		i;
 
 	i = 0;
-	copy = malloc(sizeof(char) * (end - start + 1));
+	copy = malloc(sizeof(char) * ((end - start) + 1));
 	if (!copy)
 		return (NULL);
 	while (start < end)
@@ -70,10 +73,10 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (s[i])
 	{
-		while (sep(s[i], c) && s[i])
+		while (s[i] && sep(s[i], c))
 			i++;
 		start = i;
-		while (!sep(s[i], c) && s[i])
+		while (s[i] && !sep(s[i], c))
 			i++;
 		if (start < i)
 		{
