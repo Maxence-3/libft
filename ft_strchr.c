@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:03:57 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 14:16:06 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/12 02:09:31 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i] != c)
+	while (s[i] != (char)c)
 	{
 		if (s[i++] == '\0')
 			return (NULL);

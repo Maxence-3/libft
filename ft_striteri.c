@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:18:21 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/08 18:37:04 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/12 01:37:53 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 /* int main(void)
 {
-	char str[10] = "test";
+	char str[5] = "test";
 	ft_striteri(str, majuscule);
 	printf("%s", str);
 } */
