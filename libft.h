@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:24:31 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/12 01:37:18 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/12 07:42:34 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,4 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-/* typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
-t_list	*ft_lstnew(void *content); */
 #endif

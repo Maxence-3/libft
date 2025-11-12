@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 09:38:46 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/12 05:42:46 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/12 06:12:23 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	str = (char *) s;
 	i = 0;
-	while (str[i] && i < n)
+	while (i < n)
 	{
 		if (str[i] == (char)c)
 			return (&str[i]);
