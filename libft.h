@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:24:31 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/14 14:07:15 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/14 14:43:01 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <fcntl.h>
 # include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
