@@ -6,7 +6,7 @@
 #    By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/08 16:04:48 by mde-carv          #+#    #+#              #
-#    Updated: 2025/11/13 06:23:49 by mde-carv         ###   ########.fr        #
+#    Updated: 2025/11/14 14:29:05 by mde-carv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,18 +46,20 @@ SRC = ft_atoi.c \
 		ft_strtrim.c \
 		ft_substr.c \
 		ft_tolower.c \
-		ft_toupper.c \
-		ft_lstnew.c \
+		ft_toupper.c
+		
+BNS_SRC = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c
+		ft_lstiter.c
 HEADER = -I./includes
 OBJ = $(SRC:.c=.o)
+
+BNS_OBJ = $(BNS_SRC:.c=.o)
 RM = rm -rf
 
 all: $(NAME)
@@ -66,9 +68,12 @@ $(NAME): $(OBJ)
 %.o : %.c
 	$(CC) $(FLAGS) $(HEADER) -c $< -o $@
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BNS_OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
+
+bonus: $(NAME) $(BNS_OBJ)
+	ar rcs $(NAME) $(BNS_OBJ) 
 re: fclean all
-.PHONY: fclean clean re all
+.PHONY: fclean clean re all bonus
