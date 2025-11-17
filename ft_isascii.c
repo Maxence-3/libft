@@ -6,13 +6,13 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 17:09:35 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/04 17:25:26 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:20:30 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_ascii(int c)
+int	ft_isascii(int c)
 {
 	if (!(c >= 0 && c <= 127))
 		return (0);

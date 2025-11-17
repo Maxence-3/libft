@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 10:05:04 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 14:30:30 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:20:26 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int		i;
+	size_t	i;
 	int		j;
 	char	*big_str;
 	char	*little_str;
@@ -24,11 +24,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	big_str = (char *)big;
 	little_str = (char *)little;
-	if (len - ft_strlen(little_str) == len)
+	if (ft_strlen(little_str) == 0)
 		return (big_str);
-	while (big_str[i])
+	while (big_str[i] && i < len)
 	{
-		while (big_str[i + j] == little_str[j])
+		while (big_str[i + j] == little_str[j] && i + j < len)
 		{
 			j++;
 			if (!little_str[j])

@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 11:53:56 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/06 10:37:38 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:26:42 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = dest;
 	s = src;
+	if (!dest && !src)
+		return (NULL);
 	while (n--)
 		d[n] = s[n];
 	return (dest);

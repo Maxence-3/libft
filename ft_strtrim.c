@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:00:37 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/12 20:11:15 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:09:15 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	while (s1[start] && is_charset(s1[start], set))
 		start++;
-	while (s1[end - 1] && is_charset(s1[end - 1], set))
+	while (end > start && is_charset(s1[end - 1], set))
 		end--;
 	res = malloc(sizeof(char) * (end - start + 1));
 	if (!res)
@@ -56,8 +56,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /* int main()
 {
-    char *str = "++++***---tes++t----++++***";
-    char *res = ft_strtrim(str, "-+*");
+    char *str = "  \t \t \n   \n\n\n\t";
+    char *res = ft_strtrim(str, " \n\t");
     printf("%s\n", res);
     free(res);
     

@@ -6,7 +6,7 @@
 /*   By: mde-carv <mde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 20:26:24 by mde-carv          #+#    #+#             */
-/*   Updated: 2025/11/12 20:48:33 by mde-carv         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:22:33 by mde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*n;
 
 	result = malloc(sizeof(t_list));
+	if (!result)
+		return (NULL);
 	n = result;
 	n->content = content;
 	n->next = NULL;
